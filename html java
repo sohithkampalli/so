@@ -1,0 +1,32 @@
+<!-- Restaurants.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants</title>
+</head>
+<body>
+    <h2>Select a Restaurant</h2>
+    <ul id="restaurant-list"></ul>
+
+    <script>
+        const restaurants = [
+            { id: 1, name: "Restaurant 1" },
+            { id: 2, name: "Restaurant 2" },
+            // ...more restaurants
+        ];
+
+        const restaurantList = document.getElementById('restaurant-list');
+
+        restaurants.forEach(restaurant => {
+            const li = document.createElement('li');
+            li.textContent = restaurant.name;
+            li.onclick = () => {
+                window.location.href = `/Menu.html?restaurantId=${restaurant.id}`;
+            };
+            restaurantList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
